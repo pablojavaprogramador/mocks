@@ -1,0 +1,12 @@
+{
+  "codigo": "100201",
+  "mensaje": "Operacion Exitosa",
+  "folio": "100-201905201852525176",
+  "resultado": {
+   "clienteUnico": {
+    "idPais": 1,
+    "idCanal": 1,
+    "idSucursal": 100,
+    "idFolio": 92761
+   }
+}}

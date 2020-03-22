@@ -1,0 +1,21 @@
+{
+  "mensaje": "Proceso ejecutado correctamente.",
+  "folio": "2292018112016",
+  "resultado": {
+    "cliente": {
+      "nombre": "Ernesto ",
+      "apellidoPaterno": "Trejo",
+      "apellidoMaterno": "Moran",
+      "genero": "M",
+      "fechaNacimiento": "12/05/1987",
+      "estadoCivil": "Soltero",
+      "correoElectronico": "tecnoplacita@gmail.com",
+      "clienteUnico": {
+        "idPais": 1,
+        "idCanal": 1,
+        "idSucursal": 100,
+        "folio": 92761
+      }
+    }
+  }
+}

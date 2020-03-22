@@ -1,0 +1,364 @@
+{
+  "mockDirectory": "../node/mock",
+  "quiet": false,
+  "port": "8000",
+  "latency": 50,
+  "logRequestHeaders": false,
+  "webServices": {
+    "": {
+      "latency": 20,
+      "verbs": [
+        "get"
+      ],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "ok.json"
+        }
+      }
+    },"busquedas_sucursales": {
+      "latency": 10,
+      "verbs": [
+        "post"
+      ],
+      "switch": [
+        "$.latitud",
+        "$.longitud"
+      ],
+      "responses": {
+        "post": {
+          "httpStatus": 200,
+          "mockFile": "index.html"
+        }
+      }
+    },
+    "telefonos-desconocidos": {
+    "latency": 10,
+    "verbs": [
+      "post"
+    ],
+    "switch": [
+      "$.numero",
+      "$.fechaContacto",
+      "$.idConversacion"
+    ],
+    "responses": {
+      "post": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      }
+    },
+    "switchResponses": {
+      "$.numero7393590202$.fechaContacto12%2F05%2F1987$.idConversacion233323": {
+        "httpStatus": 201,
+        "mockFile": "telefonos_desconocidos_ok_201.json"
+      },
+      "$.numero$.fechaContacto12%2F05%2F1987$.idConversacion233323": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero7353590202$.fechaContacto$.idConversacion233323": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero7353590202$.fechaContacto12%2F05%2F1987$.idConversacion": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero$#$$#$#$.fechaContacto12%2F05%2F1987$.idConversacion233323": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero7353590202$.fechaContacto$#$$#$#$.idConversacion233323": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero7353590202$.fechaContacto12%2F05%2F1987$.idConversacion$#$$#$#": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.numero7353590202$.fechaContacto12%2F05%2F1987$.idConversacion233326": {
+        "httpStatus": 500,
+        "mockFile": "clientes_internalServer_500.json"
+      }
+    }
+  }, 
+    "busquedas/telefono": {
+      "latency": 10,
+      "verbs": [
+        "post"
+      ],
+      "switch": [
+        "$.telefono"
+      ],
+      "responses": {
+        "post": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        }
+      },
+      "switchResponses": {
+        "$.telefono1123456789": { 
+          "httpStatus": 200,
+          "mockFile": "clientes_ok_200.json"
+        },
+        "$.telefono": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        },
+        "$.telefono400": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        },
+        "$.telefono401": {
+          "httpStatus": 401,
+          "mockFile": "clientes_unauthorized_401.json"
+        },
+        "$.telefono500": {
+          "httpStatus": 500,
+          "mockFile": "clientes_internalServer_500.json"
+        }
+      }
+    },
+    "busquedas/nombre": {
+      "latency": 10,
+      "verbs": [
+        "post"
+      ],
+      "switch": [
+        "$.nombreCompleto",
+        "$.fechaNacimiento"
+      ],
+      "responses": {
+        "post": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        }
+      },
+      "switchResponses": {
+        "$.nombreCompletoErnesto%20Trejo%20Moran$.fechaNacimiento12%2F05%2F1987": { 
+          "httpStatus": 200,
+          "mockFile": "clientes_ok_200.json"
+        },
+        "$.fechaNacimiento12%2F05%2F1987": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        },
+        "$.nombreCompleto75JUJJH20t$.fechaNacimiento12%2F05%2F1987": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        },
+        "$.nombreCompletoErnesto%20Trejo%20Moran": {
+          "httpStatus": 400,
+          "mockFile": "clientes_badRequest_400.json"
+        },
+        "$.nombreCompleto500$.fechaNacimiento12%2F05%2F1987": {
+          "httpStatus": 500,
+          "mockFile": "clientes_internalServer_500.json"
+        }
+      }
+    },
+    "busquedas/cu": {
+    "latency": 10,
+    "verbs": [
+      "post"
+    ],
+    "switch": [
+      "$.clienteUnico.idPais",
+      "$.clienteUnico.idCanal",
+      "$.clienteUnico.idSucursal", 
+      "$.clienteUnico.folio"
+    ],
+    "responses": {
+      "post": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      }
+    },
+    "switchResponses": {
+      "$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal4178$.clienteUnico.folio31706": {
+        "httpStatus": 200,
+        "mockFile": "clientes_ok_200_cu.json"
+      },
+
+      "$.clienteUnico.idPaiss$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanals$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursals$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folios": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+
+      "$.clienteUnico.idPaisnull$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanalnull$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursalnull$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folionull": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais400$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais400$.clienteUnico.idCanalo$.clienteUnico.idSucursalx$.clienteUnico.foliokiubi": {
+        "httpStatus": 400,
+        "mockFile": "clientes_badRequest_400.json"
+      },
+      "$.clienteUnico.idPais401$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 401,
+        "mockFile": "clientes_unauthorized_401.json"
+      },
+      "$.clienteUnico.idPais500$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+        "httpStatus": 500,
+        "mockFile": "clientes_internalServer_500.json"
+      }
+    }
+  },
+    "telefonos": {
+      "latency": 10,
+      "verbs": [
+        "put",
+        "post"
+      ],
+      "switch": [
+        "$.telefono.numero",
+        "$.telefono.tipo",
+        "$.telefono.compania",
+        "$.clienteUnico.idPais",
+        "$.clienteUnico.idCanal",
+        "$.clienteUnico.idSucursal",
+        "$.clienteUnico.folio"
+      ],
+      "responses": {
+        "put": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "post": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        }
+      },
+      "switchResponses": {
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 201,
+          "mockFile": "telefonos_ok_201.json"
+        },"$.telefono.numero7353590205$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 200,
+          "mockFile": "telefonos_ok_200.json"
+        },
+        "$.telefono.numero$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPaisnull$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanalnull$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursalnull$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero400$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590201$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folionull": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero75JUJJH201$.telefono.tipoM0V1L$.telefono.companiaM0v1star$.clienteUnico.idPaisoi$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folioS2g6P": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero401$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 401,
+          "mockFile": "telefonos_unauthorized_401.json"
+        },
+        "$.telefono.numero500$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 500,
+          "mockFile": "telefonos_internalServer_500.json" 
+        },
+
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 200,
+          "mockFile": "telefonos_ok_200.json"
+        },
+        "$.telefono.numero$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92762": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPaisnull$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanalnull$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursalnull$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero4000$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero7353590202$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folionull": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero75JUJJH201$.telefono.tipoM0V1L$.telefono.companiaM0v1star$.clienteUnico.idPaisi$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folioS2g6P": {
+          "httpStatus": 400,
+          "mockFile": "telefonos_badRequest_400.json"
+        },
+        "$.telefono.numero4001$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 401,
+          "mockFile": "telefonos_unauthorized_401.json"
+        },
+        "$.telefono.numero5000$.telefono.tipoMOVIL$.telefono.companiaMovistar$.clienteUnico.idPais1$.clienteUnico.idCanal1$.clienteUnico.idSucursal100$.clienteUnico.folio92761": {
+          "httpStatus": 500,
+          "mockFile": "telefonos_internalServer_500.json" 
+        }
+      }
+    }
+  }
+}

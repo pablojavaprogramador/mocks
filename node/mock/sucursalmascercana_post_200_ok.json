@@ -1,0 +1,14 @@
+{
+  "codigo": "100200",
+  "mensaje": "Operación exitosa.",
+  "folio": "101-070520191156062401",
+  "resultado": {
+    "sucursal": {
+      "idPais": 1,
+      "idCanal": 1,
+      "idSucursal": 6104,
+      "nombre": "EKT MORELOS AXOCHIAPAN",
+      "idEstatus": 1
+    }
+  }
+}

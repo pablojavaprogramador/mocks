@@ -1,0 +1,9 @@
+{
+  "codigo": "400.CobranzaCredito-Originacion-Zonificacion.100400",
+  "mensaje": "Parámetros no validos por favor valide su información.",
+  "folio": "401-201905271852525176",
+  "info": "https://baz-developer.bancoazteca.com.mx/errors#400.CobranzaCredito-Originacion-Zonificacion.100400",
+  "detalles": [
+    "El campo longitud contiene datos no válidos"
+  ]
+}

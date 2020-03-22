@@ -1,0 +1,9 @@
+{
+  "codigo": "500.CobranzaCredito-Investigacion-Cobranza-Clientes.SRE101",
+  "mensaje": "Fallo en el servidor al procesar la petición.",
+  "folio": "22920181120162829642",
+  "info": "https://baz-developer.bancoazteca.com.mx/errors#500.CobranzaCredito-Investigacion-Cobranza-Clientes.SRE101",
+  "detalles": [
+    ""
+  ]
+}
