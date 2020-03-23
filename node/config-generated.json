@@ -29,7 +29,7 @@
       "responses": {
         "post": {
           "httpStatus": 200,
-          "mockFile": "index.html"
+          "mockFile": "index.json"
         },
         "get": {
           "httpStatus": 200,
