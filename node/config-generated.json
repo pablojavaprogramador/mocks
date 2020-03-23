@@ -16,6 +16,17 @@
           "mockFile": "ok.json"
         }
       }
+    },"actualizacion": {
+      "latency": 20,
+      "verbs": [
+        "get"
+      ],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "actualizacion.json"
+        }
+      }
     },"busquedas_sucursales": {
       "latency": 10,
       "verbs": [
