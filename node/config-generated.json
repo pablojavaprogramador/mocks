@@ -19,7 +19,8 @@
     },"busquedas_sucursales": {
       "latency": 10,
       "verbs": [
-        "post"
+        "post",
+        "get"
       ],
       "switch": [
         "$.latitud",
@@ -27,6 +28,10 @@
       ],
       "responses": {
         "post": {
+          "httpStatus": 200,
+          "mockFile": "index.html"
+        },
+        "get": {
           "httpStatus": 200,
           "mockFile": "index.html"
         }
