@@ -34,14 +34,14 @@
         "get": {
           "httpStatus": 200,
           "mockFile": "index.html"
-        }
-      },
+      
+      }},
       "switchResponses": {
         "$.latitud19.60259635905475$.longitud-99.06507371167482": {
           "httpStatus": 200,
           "mockFile": "index.json"
         }
-      }
+      
     }
     },
     "telefonos-desconocidos": {
