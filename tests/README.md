@@ -1,1 +1,0 @@
-En esta carpeta se encuentra lo necesario para la integracion de pruebas haciendo uso de los modulos de "apickli" y "cucumber" para la generacion de archivos features
